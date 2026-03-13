@@ -4,7 +4,7 @@
 pkgname=python3-pathspec
 _pyname=pathspec
 pkgver=0.12.1
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="Utility library for gitignore style pattern matching of file paths"
 url="https://github.com/cpburnz/python-path-specification"
 license="MPL-2.0"
@@ -29,6 +29,7 @@ package() {
         .dist/pathspec-$pkgver-py3-none-any.whl
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 19d1a8ae5936e76eacd691b0e2fb33d0de376556751a9ae007f6b09d0aa36af7d171101df620cab3e93c9913be578ff3d6bba9d4460351ac248e5c9e015380ad  python3-pathspec-0.12.1.tar.gz
 "
